@@ -18,7 +18,7 @@
 		6220DC9B23A5050A0093A237 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6220DC9A23A5050A0093A237 /* SafariExtensionHandler.swift */; };
 		6220DC9D23A5050A0093A237 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6220DC9C23A5050A0093A237 /* SafariExtensionViewController.swift */; };
 		6220DCA023A5050A0093A237 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6220DC9E23A5050A0093A237 /* SafariExtensionViewController.xib */; };
-		6220DCA323A5050A0093A237 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 6220DCA223A5050A0093A237 /* script.js */; };
+		6220DCA323A5050A0093A237 /* image-search.js in Resources */ = {isa = PBXBuildFile; fileRef = 6220DCA223A5050A0093A237 /* image-search.js */; };
 		6220DCA523A5050A0093A237 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6220DCA423A5050A0093A237 /* ToolbarItemIcon.pdf */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +70,7 @@
 		6220DC9C23A5050A0093A237 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		6220DC9F23A5050A0093A237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		6220DCA123A5050A0093A237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6220DCA223A5050A0093A237 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		6220DCA223A5050A0093A237 /* image-search.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "image-search.js"; sourceTree = "<group>"; };
 		6220DCA423A5050A0093A237 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		6220DCA623A5050A0093A237 /* ImageSearch_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageSearch_Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,7 +159,7 @@
 				6220DC9C23A5050A0093A237 /* SafariExtensionViewController.swift */,
 				6220DC9E23A5050A0093A237 /* SafariExtensionViewController.xib */,
 				6220DCA123A5050A0093A237 /* Info.plist */,
-				6220DCA223A5050A0093A237 /* script.js */,
+				6220DCA223A5050A0093A237 /* image-search.js */,
 				6220DCA423A5050A0093A237 /* ToolbarItemIcon.pdf */,
 				6220DCA623A5050A0093A237 /* ImageSearch_Extension.entitlements */,
 			);
@@ -289,7 +289,7 @@
 			files = (
 				6220DCA523A5050A0093A237 /* ToolbarItemIcon.pdf in Resources */,
 				6220DCA023A5050A0093A237 /* SafariExtensionViewController.xib in Resources */,
-				6220DCA323A5050A0093A237 /* script.js in Resources */,
+				6220DCA323A5050A0093A237 /* image-search.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +476,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ImageSearch Extension/ImageSearch_Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J9849FB53X;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "ImageSearch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -496,7 +496,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ImageSearch Extension/ImageSearch_Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J9849FB53X;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				INFOPLIST_FILE = "ImageSearch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

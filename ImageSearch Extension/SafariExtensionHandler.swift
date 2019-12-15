@@ -27,6 +27,48 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         validationHandler(true, "")
     }
     
+    override func validateContextMenuItem(withCommand command: String, in page: SFSafariPage, userInfo: [String : Any]? = nil, validationHandler: @escaping (Bool, String?) -> Void) {
+        
+        if let imgUrl = userInfo?["imageSrc"] {
+            NSLog("validateContextMenuItem : Entered validation area : \(imgUrl), type is \(type(of: imgUrl))")
+            //let imgSrc = (imgUrl as! NSString).lastPathComponent
+            validationHandler(false, nil)
+        } else {
+            NSLog("validateContextMenuItem : userInfo-imageSrc = \(String(describing: userInfo?["imageSrc"]))")
+            validationHandler(true, nil)
+        }
+    }
+    
+    override func contextMenuItemSelected(withCommand command: String, in page: SFSafariPage, userInfo: [String : Any]? = nil) {
+        NSLog("contextMenuItemSelected : Command : \(command), UserInfo : \(String(describing: userInfo))")
+        guard let imgUrl = userInfo?["imageSrc"] else {
+            return
+        }
+        
+        if command == "GoogleImageSearch" {
+            let googleSearchUrl = "https://www.google.com/searchbyimage?&image_url=\(imgUrl)&safe=off";
+            SFSafariApplication.getActiveWindow { (activeWindow) in
+                activeWindow?.openTab(with: URL(string: googleSearchUrl)!, makeActiveIfPossible: true, completionHandler: {_ in
+                    NSLog("Opened google image search url : \(googleSearchUrl)")
+                })
+            }
+        }
+        
+        if command == "BingImageSearch" {
+            let bingSearchUrl = "https://www.bing.com/images/search?view=detailv2&iss=sbi&form=SBIHMP&sbisrc=UrlPaste&q=imgurl:\(imgUrl)&idpbck=1&selectedindex=0&id=https://imgur.com/BcBmYM9.jpg&mediaurl=\(imgUrl)"
+            SFSafariApplication.getActiveWindow { (activeWindow) in
+                activeWindow?.openTab(with: URL(string: bingSearchUrl)!, makeActiveIfPossible: true, completionHandler: {_ in
+                    NSLog("Opened google image search url : \(bingSearchUrl)")
+                })
+            }
+        }
+        
+        /*
+         Bing URL example :
+         https://www.bing.com/images/search?view=detailv2&iss=sbi&form=SBIHMP&sbisrc=UrlPaste&q=imgurl:https://imgur.com/BcBmYM9.jpg&idpbck=1&selectedindex=0&id=https://imgur.com/BcBmYM9.jpg&mediaurl=https://imgur.com/BcBmYM9.jpg
+         */
+    }
+    
     override func popoverViewController() -> SFSafariExtensionViewController {
         return SafariExtensionViewController.shared
     }
