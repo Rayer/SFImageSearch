@@ -67,6 +67,15 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
          Bing URL example :
          https://www.bing.com/images/search?view=detailv2&iss=sbi&form=SBIHMP&sbisrc=UrlPaste&q=imgurl:https://imgur.com/BcBmYM9.jpg&idpbck=1&selectedindex=0&id=https://imgur.com/BcBmYM9.jpg&mediaurl=https://imgur.com/BcBmYM9.jpg
          */
+        
+        if command == "YandexImageSearch" {
+            let yandexSearchUrl = "https://yandex.com/images/search?rpt=imageview&url=\(imgUrl)"
+            SFSafariApplication.getActiveWindow { (activeWindow) in
+                activeWindow?.openTab(with: URL(string: yandexSearchUrl)!, makeActiveIfPossible: true, completionHandler: {_ in
+                    NSLog("Opened google image search url : \(yandexSearchUrl)")
+                })
+            }
+        }
     }
     
     override func popoverViewController() -> SFSafariExtensionViewController {

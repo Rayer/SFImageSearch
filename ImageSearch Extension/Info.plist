@@ -32,6 +32,12 @@
 		<array>
 			<dict>
 				<key>Text</key>
+				<string>Yandex Image Search</string>
+				<key>Command</key>
+				<string>YandexImageSearch</string>
+			</dict>
+			<dict>
+				<key>Text</key>
 				<string>Google Image Search</string>
 				<key>Command</key>
 				<string>GoogleImageSearch</string>
