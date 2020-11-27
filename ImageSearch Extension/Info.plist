@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSExtension</key>
@@ -28,32 +28,32 @@
 		<string>com.apple.Safari.extension</string>
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).SafariExtensionHandler</string>
-		<key>SFSafariContextMenu</key>
-		<array>
-			<dict>
-				<key>Text</key>
-				<string>Yandex Image Search</string>
-				<key>Command</key>
-				<string>YandexImageSearch</string>
-			</dict>
-			<dict>
-				<key>Text</key>
-				<string>Google Image Search</string>
-				<key>Command</key>
-				<string>GoogleImageSearch</string>
-			</dict>
-			<dict>
-				<key>Text</key>
-				<string>Bing Image Search</string>
-				<key>Command</key>
-				<string>BingImageSearch</string>
-			</dict>
-		</array>
 		<key>SFSafariContentScript</key>
 		<array>
 			<dict>
 				<key>Script</key>
 				<string>image-search.js</string>
+			</dict>
+		</array>
+		<key>SFSafariContextMenu</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>YandexImageSearch</string>
+				<key>Text</key>
+				<string>Yandex Image Search</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>GoogleImageSearch</string>
+				<key>Text</key>
+				<string>Google Image Search</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>BingImageSearch</string>
+				<key>Text</key>
+				<string>Bing Image Search</string>
 			</dict>
 		</array>
 		<key>SFSafariWebsiteAccess</key>
