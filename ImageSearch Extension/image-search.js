@@ -20,7 +20,7 @@ function isImgUrl(url) {
     return false;
   }
   let pure = getPathFromUrl(url)
-  return (pure.match(/\.(jpeg|jpg|gif|png)$/) != null);
+  return (pure.match(/\.(jpeg|jpg|gif|png|svn|tiff)$/) != null);
 }
 
 function getPathFromUrl(url) {

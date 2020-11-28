@@ -55,6 +55,12 @@
 				<key>Text</key>
 				<string>Bing Image Search</string>
 			</dict>
+			<dict>
+				<key>Command</key>
+				<string>CopyToClipboard</string>
+				<key>Text</key>
+				<string>Copy To Clipboard</string>
+			</dict>
 		</array>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>

@@ -76,6 +76,25 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                 })
             }
         }
+        
+        if command == "CopyToClipboard" {
+            let url = URL(string: imgUrl as! String)
+            NSLog("imgUrl is : \(imgUrl)")
+            NSLog("Attempting loading from url : \(String(describing: url?.absoluteString))")
+            guard let u = url else {
+                return
+            }
+            let data = try? Data(contentsOf: u)
+            let image = NSImage(data: data!)
+            
+            let pb = NSPasteboard.general
+            
+            pb.clearContents()
+            let success = pb.writeObjects([image! as NSImage])
+            if !success {
+                NSLog("Fail to write into pasteboard!")
+            }
+        }
     }
     
     override func popoverViewController() -> SFSafariExtensionViewController {
