@@ -16,7 +16,8 @@ Safari App Extension跟以前的Safari Extension不同，他無法單獨安裝Sa
 ## 主要功能
 
 就...字面上的意思，當游標在圖片上面時，右鍵可以輔助以Google或者Bing搜尋。
-https://i2.wp.com/www.rayer.idv.tw/blog/wp-content/uploads/2020/11/g0Vs3Ui.png?w=990&ssl=1![image](https://user-images.githubusercontent.com/156013/119349973-5e3a5500-bcd1-11eb-87c1-690b97d63edc.png)
+
+![image](https://user-images.githubusercontent.com/156013/119349973-5e3a5500-bcd1-11eb-87c1-690b97d63edc.png)
 
 
 ## 開發以及限制
