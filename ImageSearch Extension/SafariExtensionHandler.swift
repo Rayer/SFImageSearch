@@ -41,9 +41,18 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     
     override func contextMenuItemSelected(withCommand command: String, in page: SFSafariPage, userInfo: [String : Any]? = nil) {
         NSLog("contextMenuItemSelected : Command : \(command), UserInfo : \(String(describing: userInfo))")
-        guard let imgUrl = userInfo?["imageSrc"] else {
+        guard let imgUrl = userInfo?["imageSrc"] as? String else {
             return
         }
+        
+        let cmdMap : [String:SearchProvider] = ["GoogleImageSearch": .Google, "BingImageSearch": .Bing, "YandexImageSearch": .Yandex]
+        
+        let searchUrl = GenerateISUrl(fromProvider: cmdMap[command] ?? .Google, withImgUrl: imgUrl)
+        
+        SFSafariApplication.getActiveWindow { (activeWindow) in
+            activeWindow?.openTab(with: URL(string: searchUrl)!, makeActiveIfPossible: true, completionHandler: nil)
+        }
+        
         
         if command == "GoogleImageSearch" {
             let googleSearchUrl = "https://www.google.com/searchbyimage?&image_url=\(imgUrl)&safe=off";
@@ -54,31 +63,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             }
         }
         
-        if command == "BingImageSearch" {
-            let bingSearchUrl = "https://www.bing.com/images/search?view=detailv2&iss=sbi&form=SBIHMP&sbisrc=UrlPaste&q=imgurl:\(imgUrl)&idpbck=1&selectedindex=0&id=https://imgur.com/BcBmYM9.jpg&mediaurl=\(imgUrl)"
-            SFSafariApplication.getActiveWindow { (activeWindow) in
-                activeWindow?.openTab(with: URL(string: bingSearchUrl)!, makeActiveIfPossible: true, completionHandler: {_ in
-                    NSLog("Opened google image search url : \(bingSearchUrl)")
-                })
-            }
-        }
-        
-        /*
-         Bing URL example :
-         https://www.bing.com/images/search?view=detailv2&iss=sbi&form=SBIHMP&sbisrc=UrlPaste&q=imgurl:https://imgur.com/BcBmYM9.jpg&idpbck=1&selectedindex=0&id=https://imgur.com/BcBmYM9.jpg&mediaurl=https://imgur.com/BcBmYM9.jpg
-         */
-        
-        if command == "YandexImageSearch" {
-            let yandexSearchUrl = "https://yandex.com/images/search?rpt=imageview&url=\(imgUrl)"
-            SFSafariApplication.getActiveWindow { (activeWindow) in
-                activeWindow?.openTab(with: URL(string: yandexSearchUrl)!, makeActiveIfPossible: true, completionHandler: {_ in
-                    NSLog("Opened google image search url : \(yandexSearchUrl)")
-                })
-            }
-        }
-        
         if command == "CopyToClipboard" {
-            let url = URL(string: imgUrl as! String)
+            let url = URL(string: imgUrl)
             NSLog("imgUrl is : \(imgUrl)")
             NSLog("Attempting loading from url : \(String(describing: url?.absoluteString))")
             guard let u = url else {

@@ -19,6 +19,14 @@
 		6220DCA023A5050A0093A237 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6220DC9E23A5050A0093A237 /* SafariExtensionViewController.xib */; };
 		6220DCA323A5050A0093A237 /* image-search.js in Resources */ = {isa = PBXBuildFile; fileRef = 6220DCA223A5050A0093A237 /* image-search.js */; };
 		6220DCA523A5050A0093A237 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6220DCA423A5050A0093A237 /* ToolbarItemIcon.pdf */; };
+		6282014C2676FE64007BD491 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6220DC9723A5050A0093A237 /* Cocoa.framework */; };
+		6282014F2676FE64007BD491 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6282014E2676FE64007BD491 /* Media.xcassets */; };
+		628201512676FE64007BD491 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 628201502676FE64007BD491 /* icon.icns */; };
+		628201532676FE64007BD491 /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628201522676FE64007BD491 /* ActionRequestHandler.swift */; };
+		628201582676FE64007BD491 /* ActionExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6282014B2676FE64007BD491 /* ActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6282015D2676FEFD007BD491 /* ImageSearchURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6282015C2676FEFD007BD491 /* ImageSearchURLProvider.swift */; };
+		6282015E26771C57007BD491 /* ImageSearchURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6282015C2676FEFD007BD491 /* ImageSearchURLProvider.swift */; };
+		6282015F26771C61007BD491 /* ImageSearchURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6282015C2676FEFD007BD491 /* ImageSearchURLProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,13 @@
 			remoteGlobalIDString = 6220DC9123A5050A0093A237;
 			remoteInfo = "ImageSearch Extension";
 		};
+		628201562676FE64007BD491 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6220DC6C23A505000093A237 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6282014A2676FE64007BD491;
+			remoteInfo = ActionExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				628201582676FE64007BD491 /* ActionExtension.appex in Embed App Extensions */,
 				6220DC9323A5050A0093A237 /* ImageSearch Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -72,6 +88,13 @@
 		6220DCA223A5050A0093A237 /* image-search.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "image-search.js"; sourceTree = "<group>"; };
 		6220DCA423A5050A0093A237 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		6220DCA623A5050A0093A237 /* ImageSearch_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageSearch_Extension.entitlements; sourceTree = "<group>"; };
+		6282014B2676FE64007BD491 /* ActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6282014E2676FE64007BD491 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		628201502676FE64007BD491 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		628201522676FE64007BD491 /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
+		628201542676FE64007BD491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		628201552676FE64007BD491 /* ActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActionExtension.entitlements; sourceTree = "<group>"; };
+		6282015C2676FEFD007BD491 /* ImageSearchURLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchURLProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +120,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		628201482676FE64007BD491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6282014C2676FE64007BD491 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -106,6 +137,7 @@
 				6220DC7623A505000093A237 /* ImageSearch */,
 				6220DC8A23A5050A0093A237 /* ImageSearchTests */,
 				6220DC9923A5050A0093A237 /* ImageSearch Extension */,
+				6282014D2676FE64007BD491 /* ActionExtension */,
 				6220DC9623A5050A0093A237 /* Frameworks */,
 				6220DC7523A505000093A237 /* Products */,
 			);
@@ -117,6 +149,7 @@
 				6220DC7423A505000093A237 /* ImageSearch.app */,
 				6220DC8723A5050A0093A237 /* ImageSearchTests.xctest */,
 				6220DC9223A5050A0093A237 /* ImageSearch Extension.appex */,
+				6282014B2676FE64007BD491 /* ActionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +163,7 @@
 				6220DC7E23A505000093A237 /* ViewController.swift */,
 				6220DC8023A5050A0093A237 /* Assets.xcassets */,
 				6220DC8223A5050A0093A237 /* Info.plist */,
+				6282015C2676FEFD007BD491 /* ImageSearchURLProvider.swift */,
 			);
 			path = ImageSearch;
 			sourceTree = "<group>";
@@ -165,6 +199,18 @@
 			path = "ImageSearch Extension";
 			sourceTree = "<group>";
 		};
+		6282014D2676FE64007BD491 /* ActionExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6282014E2676FE64007BD491 /* Media.xcassets */,
+				628201502676FE64007BD491 /* icon.icns */,
+				628201522676FE64007BD491 /* ActionRequestHandler.swift */,
+				628201542676FE64007BD491 /* Info.plist */,
+				628201552676FE64007BD491 /* ActionExtension.entitlements */,
+			);
+			path = ActionExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +227,7 @@
 			);
 			dependencies = (
 				6220DC9523A5050A0093A237 /* PBXTargetDependency */,
+				628201572676FE64007BD491 /* PBXTargetDependency */,
 			);
 			name = ImageSearch;
 			productName = ImageSearch;
@@ -222,13 +269,30 @@
 			productReference = 6220DC9223A5050A0093A237 /* ImageSearch Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		6282014A2676FE64007BD491 /* ActionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 628201592676FE64007BD491 /* Build configuration list for PBXNativeTarget "ActionExtension" */;
+			buildPhases = (
+				628201472676FE64007BD491 /* Sources */,
+				628201482676FE64007BD491 /* Frameworks */,
+				628201492676FE64007BD491 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActionExtension;
+			productName = ActionExtension;
+			productReference = 6282014B2676FE64007BD491 /* ActionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6220DC6C23A505000093A237 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = Rayer;
 				TargetAttributes = {
@@ -241,6 +305,9 @@
 					};
 					6220DC9123A5050A0093A237 = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					6282014A2676FE64007BD491 = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -260,6 +327,7 @@
 				6220DC7323A505000093A237 /* ImageSearch */,
 				6220DC8623A5050A0093A237 /* ImageSearchTests */,
 				6220DC9123A5050A0093A237 /* ImageSearch Extension */,
+				6282014A2676FE64007BD491 /* ActionExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -291,6 +359,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		628201492676FE64007BD491 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6282014F2676FE64007BD491 /* Media.xcassets in Resources */,
+				628201512676FE64007BD491 /* icon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -300,6 +377,7 @@
 			files = (
 				6220DC7F23A505000093A237 /* ViewController.swift in Sources */,
 				6220DC7A23A505000093A237 /* AppDelegate.swift in Sources */,
+				6282015D2676FEFD007BD491 /* ImageSearchURLProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +395,16 @@
 			files = (
 				6220DC9D23A5050A0093A237 /* SafariExtensionViewController.swift in Sources */,
 				6220DC9B23A5050A0093A237 /* SafariExtensionHandler.swift in Sources */,
+				6282015E26771C57007BD491 /* ImageSearchURLProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		628201472676FE64007BD491 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6282015F26771C61007BD491 /* ImageSearchURLProvider.swift in Sources */,
+				628201532676FE64007BD491 /* ActionRequestHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +420,11 @@
 			isa = PBXTargetDependency;
 			target = 6220DC9123A5050A0093A237 /* ImageSearch Extension */;
 			targetProxy = 6220DC9423A5050A0093A237 /* PBXContainerItemProxy */;
+		};
+		628201572676FE64007BD491 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6282014A2676FE64007BD491 /* ActionExtension */;
+			targetProxy = 628201562676FE64007BD491 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -476,7 +569,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ImageSearch Extension/ImageSearch_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8AA96R6MF3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "ImageSearch Extension/Info.plist";
@@ -486,7 +579,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rayer.ImageSearchSF.SFExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -500,7 +593,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ImageSearch Extension/ImageSearch_Extension.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8AA96R6MF3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "ImageSearch Extension/Info.plist";
@@ -510,7 +603,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rayer.ImageSearchSF.SFExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -527,7 +620,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8AA96R6MF3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ImageSearch/Info.plist;
@@ -536,7 +629,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rayer.ImageSearchSF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -552,7 +645,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8AA96R6MF3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = ImageSearch/Info.plist;
@@ -561,7 +654,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rayer.ImageSearchSF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -612,6 +705,52 @@
 			};
 			name = Release;
 		};
+		6282015A2676FE64007BD491 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActionExtension/ActionExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8AA96R6MF3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ActionExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rayer.ImageSearchSF.ActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6282015B2676FE64007BD491 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ActionExtension/ActionExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8AA96R6MF3;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = ActionExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rayer.ImageSearchSF.ActionExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -647,6 +786,15 @@
 			buildConfigurations = (
 				6220DCB123A5050A0093A237 /* Debug */,
 				6220DCB223A5050A0093A237 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		628201592676FE64007BD491 /* Build configuration list for PBXNativeTarget "ActionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6282015A2676FE64007BD491 /* Debug */,
+				6282015B2676FE64007BD491 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
